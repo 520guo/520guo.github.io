@@ -1,0 +1,167 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background-image: url(img/all_page_bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+	position: relative;
+}
+.shouye .xin{
+	width: .5rem;
+	height: .4rem;
+	background-image: url(img/heart.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 9.98203%;
+	left: 64%;
+	animation: xin 1s infinite alternate linear;
+}
+@keyframes xin{
+	from{transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+.shouye .biaoti{
+	width: 3rem;
+	height: 1rem;
+	background: url(img/header.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 10.83233%;
+	left: 11.46666%;
+	animation: biaoti 1s infinite alternate linear;
+}
+@keyframes  biaoti{
+	from{transform: scale(1);}
+	to{transform: scale(1.05);}
+}
+.shouye  .tu1{
+	width: 18.8%;
+	height: 55px;
+	background-image: url(img/head1.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 20.56287%;
+	left: 16.53333%;
+	animation: tu1 1s infinite alternate linear;
+}
+@keyframes tu1{
+	from{ transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+ .shouye .tu2{
+	width: 17.8%;
+	height: 60px;
+	background-image: url(img/head2.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 30.09580%;
+	left: 15.69148%;
+	animation: tu2 1s infinite alternate linear;
+}
+@keyframes tu2{
+	from{ transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+.shouye  .tu3{
+	width: .6rem;
+	height: .7rem;
+	background-image: url(img/head3.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 26.14970%;
+	left: 42.28723%;
+	animation: tu3 1s infinite alternate linear;
+}
+@keyframes tu3{
+	from{ transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+ .shouye .tu4{
+	width: .7rem;
+	height: .7rem;
+	background-image: url(img/head4.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 26.14970%;
+	left: 66.48936%;
+	animation: tu4 1s infinite alternate linear;
+}
+@keyframes tu4{
+	from{ transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+ .shouye .content{
+	width: 3rem;
+	height:3rem;
+	background-image: url(img/song.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 39.07784%;
+	left: 11.96808%;
+}
+ .shouye .head{
+	width: 1.6rem;
+	height: 2rem;
+	background-image: url(img/face.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 36.82634%;
+	left: 50.79787%;
+	transform-origin: 50% 50%;
+	animation: head 1s infinite alternate linear;
+}
+@keyframes head{
+	from{ transform: rotate(8deg);}
+	to{transform: rotate(-8deg);}
+}
+  .shouye .dong{
+	width: 1.7rem;
+	height: .6rem;
+	background-image: url(img/page1_btn.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 85.62874%;
+	left: 26.38297%;
+	animation: xing 1s infinite alternate linear;
+}
+@keyframes xing{
+	from{ transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+ .shouye  .zhuang{
+	width: 10.10638%;
+	height: 37px;
+	background-image: url(img/demond.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 87.42514%;
+	left: 76.59574%;
+	animation: zhaung 1s infinite alternate linear;
+}
+@keyframes zhaung{
+	from{ transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+.shouye p{
+	position: absolute;
+	color: #000000;
+	font-size: 12px;
+	margin-top: 5px;
+	top: 93.42514%;
+	left: 73.59574%;
+}

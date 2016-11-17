@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>你想成为宋太太吗？</title>
+		<link rel="stylesheet" type="text/css" href="songzhongji.css" />
+		<link rel="stylesheet" type="text/css" href="../animate (10).css" />
+		<link rel="stylesheet" type="text/css" href="songzhongji2.css" />
+		<link rel="stylesheet" type="text/css" href="songzhongji3.css" />
+	</head>
+	<script type="text/javascript">
+		(function(html) {
+			change()
+
+			function change() {
+				var w = html.clientWidth
+				var size = 100 * (w / 375).toFixed(2)
+				html.style.fontSize = size + "px"
+			}
+			window.addEventListener('resize', function() {
+				change()
+			})
+		})(document.documentElement)
+	</script>
+
+	<body>
+		<div class="shouye">
+			<div class="xin"></div>
+			<div class="biaoti"></div>
+			<div class="tu1"></div>
+			<div class="tu2"></div>
+			<div class="tu3"></div>
+			<div class="tu4"></div>
+			<div class="content"></div>
+			<div class="head"></div>
+			<div class="dong"></div>
+			<div class="zhuang"></div>
+			<p>智传媒策划</p>
+		</div>
+		<div class="erye">
+			<div class="content"></div>
+			<div class="shuzhuo"></div>
+			<div class="shafa"></div>
+			<div class="taideng"></div>
+			<div class="shou animated infinite fadeOutUp"></div>
+			<p>把家居移到你心仪得位置</p>
+			<span>智传媒策划</span>
+		</div>
+		<div class="sanye">
+			<div class="tou1"></div>
+			<div class="tou2"></div>
+			<div class="tou3"></div>
+			<div class="biaoti"></div>
+			<span class="timu"></span>
+			<div class="dui">
+				<div></div>
+				<p></p>
+				<div></div>
+				<p></p>
+				<div></div>
+				<p></p>
+			</div>
+			<div class="xia"></div>
+			<span>智传媒策划</span>
+		</div>
+	</body>
+	<script src="../jquery 2/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var shouye = document.getElementsByClassName("shouye")[0]
+		var erye = document.getElementsByClassName("erye")[0]
+
+		var shuzhuo = document.getElementsByClassName("shuzhuo")[0]
+		var shafa = document.getElementsByClassName("shafa")[0]
+		var taideng = document.getElementsByClassName("taideng")[0]
+		var shou = document.getElementsByClassName("shou")[0]
+		var dong = document.getElementsByClassName("dong")[0]
+		var content = document.querySelectorAll(".content")[1]
+
+		var sanye = document.getElementsByClassName("sanye")[0]
+		var p = document.getElementsByClassName("sanye")[0].getElementsByTagName("p")
+		var dui = document.getElementsByClassName("dui")[0].getElementsByTagName("div")
+		var timu = document.getElementsByClassName("timu")[0];
+		
+		console.log(p);
+		var arrt = ["装修好的房子你知道怎么检验吗？","关于家具的颜色你怎么选择？","装修开工后的第一步应该做什么？","地砖应该比实际铺设面积多购买多少？"]
+		var arri = [['A、会','B、不会','C、略懂一点'],['A、自己选','B、听老公','C、听装修师傅的'],['A、水电改造','B、吊顶','C、贴瓷砖'],['A、20%','B、15%','C、10%']];
+		var num = ["一、","二、","三、","四"]
+		var xia = document.getElementsByClassName("xia")[0]
+		window.onload = test()
+
+		function test() {
+			window.ontouchstart = function(event) {
+				event.preventDefault();
+			};
+		}
+		dong.addEventListener("touchstart", function(event) {
+				ye()
+			}, false)
+			//第一页
+		function ye() {
+			shouye.style.display = "none";
+			erye.style.display = "block";
+		}
+		//第二页
+		yi(shuzhuo)
+		yi(shafa)
+		yi(taideng)
+
+		function yi(dong) {
+			dong.addEventListener("touchstart", function(event) {
+				satX = event.touches[0].clientX - dong.offsetLeft;
+				satY = event.touches[0].clientY - dong.offsetTop;
+				event.preventDefault();
+				return false;
+			}, false)
+			dong.addEventListener("touchmove", function(event) {
+				var X = event.touches[0].clientX - satX;
+				var Y = event.touches[0].clientY - satY;
+				if(X > 0) {
+					shou.style.display = "none";
+				}
+				if(X < 0) {
+					X = 0
+				} else if(X > document.body.offsetWidth - dong.offsetWidth) {
+					X = document.body.offsetWidth - dong.offsetWidth
+				}
+				if(Y < 0) {
+					Y = 0
+				} else if(Y > document.body.offsetHeight - dong.offsetHeight) {
+					Y = document.body.offsetHeight - dong.offsetHeight
+				}
+
+				dong.style.left = X + "px";
+				dong.style.top = Y + "px";
+			}, false)
+			dong.addEventListener("touchend", function() {
+				var divh = content.offsetHeight;
+				var divg = content.offsetTop;
+				if((content.offsetTop <= shuzhuo.offsetTop && divg + divh >= shuzhuo.offsetTop + shuzhuo.offsetHeight) && (content.offsetTop <= shafa.offsetTop && divg + divh >= shafa.offsetTop + shafa.offsetHeight)&&(content.offsetTop <= taideng.offsetTop && divg + divh >= taideng.offsetTop + taideng.offsetHeight)){
+					erye.style.display = "none";
+					sanye.style.display = "block"
+					ti(j)
+				}
+
+			})
+		}
+		//第三页
+		for(var i = 0; i < p.length; i++) {
+			p[i].index = i
+			p[i].addEventListener("touchstart", function() {
+				for(var j = 0; j < dui.length; j++) {
+					dui[j].className = ""
+					p[j].style.color = ""
+				}
+				dui[this.index].className = "active" + this.index;
+				p[this.index].style.color = "gray";
+			}, false)
+
+		}
+		 var j = 0;
+		 console.log(j)
+		function ti(j){
+		 console.log(j)
+		
+			var random = rnd(4,0);
+			timu.innerHTML = num[j]+arrt[random];
+			console.log(num[j])
+			for(var i = 0; i < 3;i++){
+				p[i].innerHTML = arri[random][i]
+			}
+			xia.addEventListener("touchstart",function(){
+			j++
+			ti(j);
+		})
+	}
+		
+		function rnd(max,min){
+			return parseInt(Math.random() * (max - min)) + min
+		}
+	</script>
+
+</html>
